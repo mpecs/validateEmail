@@ -1,0 +1,45 @@
+public class email {
+ 
+    public static boolean validateEmail(){
+        //initialize return boolean
+        boolean valid = false;
+        boolean cond1 = false;
+        boolean cond2 = false;
+
+        //initialize user input 
+        String email = "hello@gmail.com";
+
+        int a = email.indexOf('@');
+        if (a > 0){
+            cond1 = true;
+        } else {
+            cond1 = false;
+        }
+
+        char dot = email.charAt(email.length() - 4);
+        if(dot == '.'){
+            cond2 = true;
+        } else {
+            cond2 = false;
+        }
+
+        if (cond1 = true && cond2 == true){
+            valid = true;
+        } else {
+            valid = false;
+        }
+
+        
+
+        return valid;
+    }
+
+    public static void main (String[] args){
+
+        if (validateEmail() == false){
+            System.out.println("This email is invalid.");
+        } else {
+            System.out.println("This email is valid.");
+        }
+    }
+}
